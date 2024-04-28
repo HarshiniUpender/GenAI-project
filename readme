@@ -1,0 +1,22 @@
+This project let's end user get suggestions from 'gpt-35-turbo' model about the right crop to grow in a particular place and ask questions to get relevant answers.
+
+Both prompt engineering and RAG are implmented here, 
+
+Using the UI end user can opt for a 'Generalised suggestion' by selecting 'Yes' radio button,
+which using prompt engineering suggests the crops for a particular location. 
+
+
+By selecting 'No' radio button, the text box gets enabled which lets end user to ask their questions and 
+RAG implementation is done here,
+I have generated embeddings using 'text-embedding-ada-002' model for a sample data that has details about different locations,
+When the end user poses the question, an embedding is generated for that too and using cosine similarity
+found the closed relative chunk from the sample data. Thereby deriving an apt answer and displaying back on the UI.
+
+Also a target language can be selected by enduser, by which the model generates the responses in that specific language and same is displayed back on the UI.
+
+
+Cmd to run the server 
+python -m http.server 9000
+
+UI url
+http://localhost:9000/index.html

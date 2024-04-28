@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>GENAI project</title>
+    <link rel="stylesheet" href="./upload.css">
+    <script src="https://unpkg.com/axios@0.2.1/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/franc/2.0.2/franc.min.js"></script> <!-- Franc library -->
+   
+    <style>
+        #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+ 
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+ 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+ 
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+ 
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+ 
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+ 
+        * {
+          box-sizing: border-box;
+        }
+       
+        /* Create two equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 50%;
+          padding: 10px;
+          height: 90vh;
+          border: 2px rgb(11, 1, 1);
+        }
+       
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        </style>
+          <script>
+            $(document).ready(function() {
+                $("input[type='radio']").click(function () {
+                        var radioAnswer = $("input[name='options']:checked").val();
+                        console.log("radioAnswer===",radioAnswer)
+                        if (radioAnswer) {
+                            $("#question").attr("disabled", "disabled");
+                        }
+                        else {
+                            $("#question").removeAttr("disabled", "disabled");
+                        }
+                    });    
+                $('#uploadBtn').click(function () {
+                    document.getElementById("loader").style.display = "block";
+                    var targetLang = $('#targetLang').val();
+                    var radioAnswer = $("input[name='options']:checked").val(); 
+                    var formData = new FormData();
+                    formData.append('radioAnswer',radioAnswer)
+                    formData.append('targetLang', targetLang);
+                    if(radioAnswer == 'off')
+                            {
+                    var question = $('#question').val();
+                    formData.append('question',question)
+                    console.log("question==",question)
+                            }
+     
+                    $.ajax({
+                        url: 'http://localhost:5000/answer',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function(response) {
+                            var responseDiv = $('#response');
+                            // print("responseDiv===",response)
+                            if(radioAnswer == 'on')
+                            {
+                            console.log("response.result==",response)
+                            responseDiv.append('<p><b>Answer:</b> ' + response.result.answer + '</h2>');
+                            // document.getElementById('question').value = "";
+                            document.getElementById("loader").style.display = "None";
+                            }
+                            else{
+                                responseDiv.append('<p><b>Question:</b> ' + question + '</h2>');
+                                responseDiv.append('<p><b>Answer:</b> ' + response.result.answer + '</h2>');
+                                document.getElementById("loader").style.display = "None";
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                        }
+                    });
+                });
+         });
+       
+       </script>
+</head>
+ 
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-md-5">
+                <div style="margin-top: 25%;">
+                    <div>
+                        <h3 style="color:#000;text-align:center;">GENAI project</h3>
+                    </div>
+                    <div class="upload-container">
+                        <div class="border-container">
+                            <div style="display: flex; margin-top: 10px;">
+                                <h4 class="ms-4 gsugg">Generalised Suggestion</h4>
+                                <div class="d-flex mt-4 p-4" style="display: flex;margin-left: 25px;margin-top: 10px;">
+                                    <div class="form-check form-check-inline m->">
+                                        <!-- <input type="radio" name="Yes" value="Yes">Yes -->
+                                        <input class="form-check-input yes" type="radio" name="options" id="defaultcheckedRadioSwitch" autocomplete="off" value="on">
+                                        <label class="form-check-label" for="checkedRadioSwitch">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline m->" style="margin-left: 20px;">
+                                        <!-- <input type="radio" name="No" value="No">No -->
+                                        <input class="form-check-input no" type="radio" name="options" id="checkedRadioSwitch" autocomplete="off" value="off" checked>
+                                        <label class="form-check-label" for="checkedRadioSwitch"> No </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="translation">
+                                <h4 style="font-weight: 600;color: #000;font-size: 18px;">Enter the target language</h4>
+                                <input  type="text" id="targetLang" name="targetLang" placeholder="Ex: English" style="margin-right:10px;height: 39px;margin-left: 26px;width: 39%;padding: 7px;" required>
+                                <!-- <button type="submit" class="uploadBtn" id="translate">Click to Translate</button> -->
+                            </div>
+                            <div style="width: 100%;display: flex;position: relative;">
+                                <div style="width: 91%;">
+                                    <textarea id="question"   rows="2" column = "5" name="question"  placeholder="Enter the question here or use the mic to speak" style="height: 100px;font-size:15px;"></textarea></div>
+                                <div style="width: 6%;position: absolute;right: 8px;bottom: 5px;">
+                                    <button id="startButton">
+                                    <span id="startButton" class="mic-icon"><i class="fas fa-microphone" style="font-size: 30px;"></i></span>
+                                </button></div>
+                            </div>
+                            <!-- <ul style="list-style-type: none;padding-left: 0;">
+                                <p style="color: #ffeb13;">Do not upload the document with more than 4096 tokens which is equivalent to 3000 words</li>
+                            </ul> -->
+                            <div class="subButton">
+                                <button type="submit" id="uploadBtn">Get Suggestion</button>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7 col-md-7">
+                <div class="upload-container" style="margin: 7px 0;">
+                    <div class="border-container" style="overflow: auto;height: 96vh; color: #fff;">
+                        <div id="loader" style="display:none;"></div>
+                        <div id="response"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/franc/2.0.2/franc.min.js"></script>
+</body>
+ 
+</html>

@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+ 
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://wallpapers.com/images/hd/leaf-life-evolution-vulnerable-ljjq7jj3ked6ks3g.jpg);
+    background-attachment: fixed;
+  }
+ 
+  .wrapper {
+    margin: auto;
+    max-width: 640px;
+    padding-top: 60px;
+    text-align: center;
+  }
+ 
+  .container {
+    border-radius: 10px;
+    overflow: auto;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+  }
+ 
+  h1 {
+    color: #51b88f;
+    font-family: 'Varela Round', sans-serif;
+    letter-spacing: -.5px;
+    font-weight: 700;
+    padding-bottom: 10px;
+  }  
+ 
+  h3 {
+    color: #101010;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 700;
+    padding-bottom: 10px;
+    margin-left: auto;
+    font-size: 20px;
+  }
+
+  .upload-container {
+    background-color: #8bb789a3;
+    border-radius: 10px;
+    opacity: 0.9;
+    border: 5px dashed rgb(1 35 13 / 65%);
+ 
+  }
+ 
+  .uploadSection {
+    background-color: rgb(239, 239, 239);
+    border-radius: 6px;
+    padding: 5px;
+  }
+ 
+  .border-container {
+    position: relative;
+    padding: 5px;
+  }
+ 
+  .choose {
+    margin-left : 80px;
+  }
+ 
+  #question{
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #100f0f;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%
+  }
+ 
+  .icons {
+    color: #181717;
+    opacity: 0.55;
+    display: inline-block;
+    width: 40%;
+  }
+ 
+  #uploadForm {
+    text-align: center;
+}
+#uploadBtn {
+    padding: 10px 20px;
+    background-color: #043c1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2%;
+}
+ 
+.uploadBtn {
+    padding: 5px 20px;
+    background-color: #08940d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-top: 2%; */
+}
+ 
+#uploadBtn:hover {
+  color: rgb(176, 232, 189);
+}
+ 
+.uploadBtn:hover {
+    color: rgb(176, 232, 189);
+  }
+ 
+.subButton {
+    text-align: center;
+    width: 100%;
+}
+ 
+.fileUpload {
+    width: 60%;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    opacity: 0.55;
+}
+ 
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #184767;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+ 
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+ 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+ 
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+ 
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+ 
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+ 
+.translation {
+    display: flex;
+    margin:20px 0;
+}
+.fa {
+    float: left;
+    margin-right: 20px;
+}
+
+.gsugg {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+#response {
+  font-size: 16px;
+}

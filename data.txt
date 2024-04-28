@@ -1,0 +1,98 @@
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Haryana
+land size: Small Farms(less than 5 acres)
+land type: Black Soil (Regur)
+Climate and seasons: Summer
+Water availability: Groundwater
+Crop preferences: Pulses
+Resources and infrastructure: Irrigation Facilities
+Budget: 250000 INR
+
+can you please provide me budget suggestions as per my below mentioned details:
+Location : Haryana
+land size: Small Farms(less than 5 acres)
+land type: Black Soil (Regur)
+Climate and seasons: Summer
+Water availability: Groundwater
+Crop preferences: Pulses
+Resources and infrastructure: Irrigation Facilities
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Karnataka
+land size: Medium Farms(5 to 25 acres)
+land type: Coastal Plains
+Climate and seasons: Monsoon
+Water availability: Rainwater Harvesting
+Crop preferences: Coconut
+Resources and infrastructure: Natural Resources
+Budget: 500000
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Rajasthan
+land size: Large Farms(more than 25 acres)
+land type: Sandy Soil
+Climate and seasons: Monsoon
+Water availability: Rainwater Harvesting
+Crop preferences: Groundnut
+Resources and infrastructure: Natural Resources
+Budget: 400000
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Assam
+land size: Large Farms(more than 25 acres)
+land type: Hill Soil
+Climate and seasons: Monsoon
+Water availability: Rainwater Harvesting
+Crop preferences: Tea
+Resources and infrastructure: Water Resources
+Budget: 300000
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Ladakh
+land size: Medium Farms(5 to 25 acres)
+land type: Greenhouses and Polyhouses
+Climate and seasons: Winter
+Water availability: Rainwater Harvesting
+Crop preferences: Apple
+Resources and infrastructure: Irrigation Infrastructure
+Budget: 1000000
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Andhra Pradesh
+land size: Large Farms(more than 25 acres)
+land type: Loamy Soil
+Climate and seasons: Summer
+Water availability: Rainfall
+Crop preferences: oilseeds
+Resources and infrastructure: Water Resources
+Budget: 800000
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Madhya Pradesh
+land size: Medium Farms(5 to 25 acres)
+land type: Red Soil
+Climate and seasons: Summer
+Water availability: Groundwater
+Crop preferences: millets
+Resources and infrastructure: Irrigation Infrastructure
+Budget: 400000
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : West Bengal
+land size: Large Farms(more than 25 acres)
+land type: Coastal Sandy Soil
+Climate and seasons: Winter
+Water availability: Rainfall
+Crop preferences: Vegetables
+Resources and infrastructure: Irrigation Infrastructure
+Budget: 300000
+
+can you please provide me farming suggestions as per my below mentioned details:
+Location : Tamil Nadu
+land size: Medium Farms(5 to 25 acres)
+land type: Marshy and Wetland Soil
+Climate and seasons: Summer
+Water availability: Groundwater
+Crop preferences: Taro
+Resources and infrastructure: Irrigation Infrastructure
+Budget: 700000
